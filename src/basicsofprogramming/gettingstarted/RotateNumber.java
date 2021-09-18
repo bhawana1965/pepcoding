@@ -3,32 +3,35 @@ package basicsofprogramming.gettingstarted;
 import java.util.Scanner;
 
 public class RotateNumber {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int n=scn.nextInt();
-        int k=scn.nextInt();
-        int count=0;
-        int temp=n;
-        while(temp>0){
-            temp=temp/10;
+        int n = scn.nextInt();
+        int k = scn.nextInt();
+        int count = 0;
+        int temp = n;
+        while (temp > 0) {
+            temp = temp / 10;
             count++;
         }
-        System.out.println(count);
-        if(k<0){
-            k=count+k;
-            System.out.println(k);
+        k = k % count;
+        if (k < 0) {
+            k = count + k;
         }
-        if(k>count){
-            k=k%count;
-        }
-        int div=(int)Math.pow(10,k);
-        int q=n/div;
-        int rem=n%div;
-        while(count>k){
-            rem *=10;
-            count--;
-        }
-        int sum=rem+q;
-        System.out.println(sum);
+
+           int divi=1;
+           int mul=1;
+           for(int i=1;i<=count;i++) {
+               if (i <= k) {
+                   divi = divi * 10;
+               } else {
+                   mul = mul * 10;
+               }
+           }
+
+            int q = n / divi;
+            int rem = n % divi;
+            int sum = rem*mul + q;
+            System.out.println(sum);
+
     }
 }

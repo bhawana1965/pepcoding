@@ -6,18 +6,15 @@ public class InverseNumber {
     public static void main(String[] args){
         Scanner scn=new Scanner(System.in);
         int n=scn.nextInt();
-        int od=0;
-        int op=1;
-        int sum=0;
-        while(n>0){
-            od=n%10;
-            int id=op;
-            int ip=od;
+       int pos=1;
+       int inv=0;
+       while(n>0){
+           int rem=n%10;
+           inv += pos*(int)Math.pow(10,rem-1);
+           pos++;
+           n=n/10;
+       }
+       System.out.println(inv);
 
-            sum += (int)(id * Math.pow(10,ip-1));
-            n=n/10;
-            op++;
-        }
-        System.out.println(sum);
     }
 }

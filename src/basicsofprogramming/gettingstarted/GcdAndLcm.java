@@ -11,9 +11,9 @@ public class GcdAndLcm {
         int tn1=n1;
         int tn2=n2;
         while(tn1%tn2 != 0){
-            int r=tn1%tn2;
+            int rem=tn1%tn2;
             tn1=tn2;
-            tn2=r;
+            tn2=rem;
         }
 
         int gcd=tn2;

@@ -9,8 +9,8 @@ public class InverseNumber {
        int pos=1;
        int inv=0;
        while(n>0){
-           int rem=n%10;
-           inv += pos*(int)Math.pow(10,rem-1);
+           int r=n%10;
+           inv += pos*(int)Math.pow(10,r-1);
            pos++;
            n=n/10;
        }

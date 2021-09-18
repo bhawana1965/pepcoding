@@ -18,18 +18,18 @@ public class RotateNumber {
             k = count + k;
         }
 
-           int divi=1;
+           int div=1;
            int mul=1;
            for(int i=1;i<=count;i++) {
                if (i <= k) {
-                   divi = divi * 10;
+                   div = div * 10;
                } else {
                    mul = mul * 10;
                }
            }
 
-            int q = n / divi;
-            int rem = n % divi;
+            int q = n / div;
+            int rem = n % div;
             int sum = rem*mul + q;
             System.out.println(sum);
 
